@@ -1,5 +1,3 @@
-// import { movies } from './data.js';
-
 // Exercise 1: Get the array of all directors.
 const getAllDirectors = array => 
   array.map(el => el.director);
@@ -57,17 +55,17 @@ const hoursToMinutes = array => {
     .map(el => {
       return {
         ...el,
-        duration: parseInt(duration.splt(" ")[0]) * 60 + (parseInt(duration.split(" ")[1]) || 0)
+        duration: parseInt(el.duration.split(" ")[0]) * 60 + (parseInt(el.duration.split(" ")[1]) || 0)
       };
     });
 };
 
 // Exercise 8: Get the best film of a year
-function bestFilmOfYear() {
-  
+function bestFilmOfYear(array, year) {
+  return Array.of(array
+    .filter(el => year === el.year)
+    .reduce((best, el) => (el.score > best.score) ? el : best));
 }
-
-
 
 // The following is required to make unit tests work.
 /* Environment setup. Do not modify the below code. */
