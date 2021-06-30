@@ -52,9 +52,15 @@ const moviesAverageByCategory = (array, category) => {
 // console.log(moviesAverageByCategory(movies, 'Mystery'));
 
 // Exercise 7: Modify the duration of movies to minutes
-function hoursToMinutes() {
-
-}
+const hoursToMinutes = array => {
+  return array
+    .map(el => {
+      return {
+        ...el,
+        duration: parseInt(duration.splt(" ")[0]) * 60 + (parseInt(duration.split(" ")[1]) || 0)
+      };
+    });
+};
 
 // Exercise 8: Get the best film of a year
 function bestFilmOfYear() {
